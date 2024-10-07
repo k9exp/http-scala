@@ -1,6 +1,6 @@
 val scala3Version = "3.5.1"
 val pekkoVersion = "1.1.0"
-val pekkoHttpVersion = "1.0.0"
+val pekkoHttpVersion = "1.0.1"
 
 lazy val root = project
   .in(file("."))

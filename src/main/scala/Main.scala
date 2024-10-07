@@ -1,4 +1,5 @@
 import scala.io.StdIn
+
 import org.apache.pekko
 import pekko.actor.typed.ActorSystem
 import pekko.actor.typed.scaladsl.Behaviors
@@ -14,7 +15,7 @@ import scala.concurrent.ExecutionContextExecutor
     val route =
         path("") {
             get {
-                complete(HttpEntity(ContentTypes.`text/plain(UTF-8)`, "ABCD"))
+                complete(HttpEntity(ContentTypes.`text/plain(UTF-8)`, getHome))
             }
         }
 
@@ -27,3 +28,5 @@ import scala.concurrent.ExecutionContextExecutor
     bindingFuture
         .flatMap(_.unbind())
         .onComplete(_ => system.terminate())
+
+def getHome = "ABCD"
